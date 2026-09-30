@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PromptForge 50 — Offline AI Prompt Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">PromptForge <span>50</span></div>
+  <p>Offline AI Prompt Generator • 50 kategori • siap copy-paste</p>
+</header>
+<main class="wrap">
+<section class="panel">
+  <h1>Buat Prompt AI Profesional</h1>
+  <p class="muted">Pilih kategori, tentukan jenis pekerjaan, lalu isi kebutuhan. Semua proses berjalan di browser—tanpa API dan tanpa internet.</p>
+  <div class="grid">
+    <label>Kategori
+      <select id="category"></select>
+    </label>
+    <label>Jenis pekerjaan / tujuan
+      <select id="intent"></select>
+    </label>
+    <label>Peran AI yang diinginkan
+      <input id="role" placeholder="Contoh: konsultan senior, developer, editor">
+    </label>
+    <label>Target / audiens
+      <input id="audience" placeholder="Contoh: pemilik UMKM, pelanggan AS, mahasiswa">
+    </label>
+    <label>Bahasa output
+      <select id="language"><option>Indonesia</option><option>English</option><option>Bilingual Indonesia-English</option><option>Bahasa lain (jelaskan)</option></select>
+    </label>
+    <label>Gaya
+      <select id="style"><option>Profesional</option><option>Ringkas</option><option>Detail</option><option>Persuasif</option><option>Teknis</option><option>Akademik</option><option>Natural / conversational</option><option>Kreatif</option></select>
+    </label>
+    <label>Format output
+      <select id="format"><option>Langkah-langkah</option><option>Checklist</option><option>Tabel</option><option>Report</option><option>Bullet points</option><option>Script</option><option>Template siap pakai</option><option>JSON terstruktur</option><option>Sesuai kebutuhan terbaik</option></select>
+    </label>
+    <label>Panjang
+      <select id="length"><option>Singkat</option><option>Menengah</option><option>Sangat detail</option><option>Sesuaikan kebutuhan</option></select>
+    </label>
+  </div>
+  <label>Detail utama / kebutuhan pengguna
+    <textarea id="goal" rows="5" placeholder="Jelaskan apa yang ingin dibuat, masalahnya, konteks, data yang tersedia, batasan, dan hasil yang diharapkan..."></textarea>
+  </label>
+  <div class="grid">
+    <label>Data / bahan yang tersedia<textarea id="data" rows="3" placeholder="Masukkan data, teks, URL, spesifikasi, angka, kode, dll."></textarea></label>
+    <label>Batasan / aturan<textarea id="constraints" rows="3" placeholder="Contoh: budget, deadline, platform, ukuran, aturan brand, larangan, compliance..."></textarea></label>
+  </div>
+  <div class="checks">
+    <label><input type="checkbox" id="clarify" checked> Jika informasi kurang, AI tanyakan pertanyaan penting terlebih dahulu</label>
+    <label><input type="checkbox" id="assumptions" checked> Nyatakan asumsi dan tandai data yang belum tersedia</label>
+    <label><input type="checkbox" id="quality" checked> Sertakan quality check / verifikasi sebelum final</label>
+  </div>
+  <button id="generate">⚡ Generate Prompt</button>
+</section>
+
+<section class="panel result">
+  <div class="result-head"><h2>Prompt siap copy-paste</h2><button id="copy">📋 Copy</button></div>
+  <textarea id="output" spellcheck="false" placeholder="Prompt akan muncul di sini..."></textarea>
+  <div class="actions"><button id="download">⬇ Download .txt</button><button id="reset" class="secondary">Reset</button></div>
+</section>
+</main>
+<footer>PromptForge 50 • Offline Edition • v1.0</footer>
+<script src="app.js"></script>
+</body>
+</html>
