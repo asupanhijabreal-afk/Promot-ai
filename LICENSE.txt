@@ -1,0 +1,7 @@
+AI Project Copilot — Starter License
+
+This source package is an original starter project created for the purchaser/distributor. You may modify the code, rebrand it, and include it in your own digital product distribution, subject to applicable law and third-party rights.
+
+Do not include third-party copyrighted assets without permission. This package does not grant ownership of any external AI service, trademark, API, model, or platform.
+
+The static app generates prompts; it does not include or grant access to paid AI APIs.

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Project Copilot — build project plans and ready-to-copy AI prompts across 50 categories.">
+  <title>AI Project Copilot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-icon">✦</span><div><strong>AI Project Copilot</strong><small>Idea → Roadmap → AI Prompts</small></div></div>
+  <button id="themeBtn" class="icon-btn" aria-label="Toggle theme">☾</button>
+</header>
+<main class="container">
+  <section class="hero">
+    <span class="eyebrow">NO API REQUIRED • GITHUB PAGES READY</span>
+    <h1>Turn any idea into a <span>step-by-step AI project.</span></h1>
+    <p>Choose a category, describe your project, and generate a project brief, roadmap, checklist, and copy-ready prompts for ChatGPT, Gemini, Claude, or another AI assistant.</p>
+    <div class="hero-actions"><button class="primary" id="startBtn">Start a Project →</button><button class="secondary" id="randomBtn">Surprise Me</button></div>
+  </section>
+
+  <section class="stats"><div><b>50</b><span>Categories</span></div><div><b>500+</b><span>Project ideas</span></div><div><b>100%</b><span>Client-side</span></div><div><b>$0</b><span>API required</span></div></section>
+
+  <section id="wizard" class="panel">
+    <div class="section-head"><div><span class="eyebrow">PROJECT WIZARD</span><h2>Build your project prompt</h2></div><span id="stepLabel">Step 1 of 4</span></div>
+    <div class="progress"><i id="progressBar"></i></div>
+
+    <div class="step active" data-step="1">
+      <label>1. Choose a category</label>
+      <input id="categorySearch" class="input" placeholder="Search 50 categories..." autocomplete="off">
+      <div id="categoryGrid" class="category-grid"></div>
+    </div>
+
+    <div class="step" data-step="2">
+      <label>2. What do you want to build?</label>
+      <input id="projectName" class="input" placeholder="Example: Online restaurant ordering website">
+      <label>Project type</label>
+      <select id="projectType" class="input"></select>
+      <label>Experience level</label>
+      <div class="chips" id="levelChips"><button data-value="Beginner">Beginner</button><button data-value="Intermediate">Intermediate</button><button data-value="Advanced">Advanced</button></div>
+      <label>Technology / platform</label>
+      <input id="technology" class="input" placeholder="Example: HTML/CSS/JS, Laravel, Canva, Notion, or 'I don't know'">
+    </div>
+
+    <div class="step" data-step="3">
+      <label>3. Tell the Copilot about your project</label>
+      <textarea id="goal" class="input textarea" placeholder="What is the goal? Who will use it? What problem should it solve? Include any important requirements."></textarea>
+      <div class="two-col"><div><label>Output language</label><select id="language" class="input"><option>English</option><option>Indonesian</option></select></div><div><label>Project goal</label><select id="purpose" class="input"><option>Personal</option><option>Business</option><option>Client Project</option><option>Freelance</option><option>Startup</option><option>Learning</option><option>Digital Product</option></select></div></div>
+    </div>
+
+    <div class="step" data-step="4">
+      <label>4. Choose what to generate</label>
+      <div class="check-grid"><label><input type="checkbox" checked value="brief"> Project Brief</label><label><input type="checkbox" checked value="roadmap"> Roadmap</label><label><input type="checkbox" checked value="prompts"> AI Prompt Chain</label><label><input type="checkbox" checked value="checklist"> Checklist</label><label><input type="checkbox" checked value="testing"> Testing Plan</label><label><input type="checkbox" value="deployment"> Deployment Plan</label></div>
+      <div class="preview-card"><span id="previewCategory">Category</span><h3 id="previewName">Your project</h3><p id="previewDesc">Complete the previous steps, then generate your project kit.</p></div>
+    </div>
+
+    <div class="wizard-actions"><button class="secondary" id="prevBtn">← Back</button><button class="primary" id="nextBtn">Continue →</button></div>
+  </section>
+
+  <section id="result" class="panel hidden">
+    <div class="result-head"><div><span class="eyebrow">PROJECT KIT</span><h2 id="resultTitle">Your Project</h2><p id="resultMeta"></p></div><div class="result-actions"><button class="secondary" id="copyAllBtn">Copy All</button><button class="secondary" id="downloadBtn">Download .txt</button><button class="secondary" id="newBtn">New Project</button></div></div>
+    <div id="resultContent"></div>
+  </section>
+
+  <section class="features"><article><span>01</span><h3>Project Wizard</h3><p>Collect only the information needed to create a useful project plan.</p></article><article><span>02</span><h3>Prompt Chain</h3><p>Generate separate prompts for research, planning, building, review, testing, and deployment.</p></article><article><span>03</span><h3>Offline First</h3><p>No API key, server, database, or paid AI service is required for the starter product.</p></article></section>
+</main>
+<footer><strong>AI Project Copilot</strong><span>Built as a static digital product. Users can bring their own AI assistant.</span></footer>
+<script src="data/categories.js"></script><script src="script.js"></script>
+</body></html>
